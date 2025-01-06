@@ -1,0 +1,41 @@
+{
+    "name": "product-display-plugin/product-display-plugin",
+    "description": "A Plugin used for CLI Products-Retrieval",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "N7co9"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.6.0"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "extra": {
+        "shopware-plugin-class": "ProductDisplayPlugin\\ProductDisplayPlugin",
+        "label": {
+            "de-DE": "Product Display Plugin",
+            "en-GB": "Product Display Plugin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ProductDisplayPlugin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ProductDisplayPlugin\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}

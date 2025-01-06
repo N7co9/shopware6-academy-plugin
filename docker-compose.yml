@@ -1,0 +1,34 @@
+services:
+
+  shopware:
+    # Use either tag "latest" or any other version like "6.5.3.0", ...
+    image: dockware/dev:latest
+    container_name: shopware6
+    ports:
+      - "80:80"
+      - "3306:3306"
+      - "22:22"
+      - "8888:8888"
+      - "9999:9999"
+    volumes:
+      - /home/nicogruenewald/Documents/basis/PhpStorm-Projects/shopware6:/var/www/html
+      - db_volume:/var/lib/mysql
+    networks:
+      - web
+    environment:
+      # Default = 0, recommended to be OFF for frontend devs
+      - XDEBUG_ENABLED=1
+      # Default = latest PHP, optional = specific version
+      - PHP_VERSION=8.3
+
+volumes:
+  db_volume:
+    driver: local
+  # Remove the named shop_volume since we're using a bind mount
+  # shop_volume:
+  #   driver: local
+
+networks:
+  web:
+    external: false
+
