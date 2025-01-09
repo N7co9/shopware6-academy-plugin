@@ -9,8 +9,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
-    name: 'app:display-products',
-    description: 'johnny dang',
+    name: 'plugin:display-products',
+    description: 'Displays products from the Product Display Plugin'
 )]
 class ProductDisplayCommand extends Command
 {
